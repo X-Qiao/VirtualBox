@@ -27,7 +27,7 @@ sudo vim info.php
 :wq!(強制存檔離開
 ```
 ```
-sudo apt install phpmyadim
+sudo apt install phpmyadmin
 ```
 ```
 sudo mysql -u root mysql
