@@ -1,0 +1,6 @@
+# VirtualBox
+b1042092 b1042093
+
+更新&升級
+sudo apt update
+sudo apt upgrade
