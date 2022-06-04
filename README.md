@@ -44,3 +44,41 @@ exit
 ```
 sudo mysql_secure_installation
 ```
+```
+登入phpmyadmin失敗
+sudo mysql -p -u root
+CREATE USER '(自己想要的帳號)'@'%' IDENTIFIED BY '(密碼)';
+GRANT ALL PRIVILEGES ON *.* TO '(帳號)'@'%';
+exit
+```
+```
+建立完資料庫之後回去終端機的指令
+sudo nano (資料庫名稱).php
+<?php
+          $host ='localhost';
+          $dbuser ='(主機的帳號)';
+          $dbpw ='(自己的密碼)';
+          $dbname ='(資料庫名稱)';
+          $link = mysqli_connect($host,$dbuser,$dbpw,$dbname);
+          if(empty($link)){
+             print mysqli_error($link);
+             die("資料庫連接失敗");
+             exit;  }
+          if(!mysqli_select_db($link,$dbname)){
+              die("資料選取失敗");  }
+          else {
+               echo "連接".$dbname."資料庫成功<br>";  }
+          mysqli_query($link,"SET NAMES'UFT-8'");
+           $sql  ="SELECT* FROM (下一層資料庫名稱)";
+           $result = mysqli_query($link,$sql);
+           if($result) {
+              $num =mysqli_num_rows($result);
+              echo "(資料庫名稱) 資料表有".$num."筆資料<br>";  }
+           $result =mysqli_query($link,$sql);
+           while($row =mysqli_fetch_array($result,MYSQLI_ASSOC)) {
+                printf("第%s筆資料: %s<br>, %s<br>, %s<br>",$row["number"],$row["id"],$row["name"],$row["gender"]);
+}
+?>
+ctrl+o存檔
+ctrl+x退出
+```
