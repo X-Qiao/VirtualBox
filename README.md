@@ -5,6 +5,7 @@ b1042026 b1042092 b1042093
 sudo apt update
 sudo apt upgrade
 ```
+### 安裝apache2
 ```
 sudo apt install apache2 mysql-server php libapache2-mod-php php-mysql
 ```
@@ -12,23 +13,29 @@ sudo apt install apache2 mysql-server php libapache2-mod-php php-mysql
 sudo apt install net-tools
 ifconfig
 ```
+建立一個檔案
 ```
 cd /var/www/html
 ls
 ```
 ```
 sudo apt install vim
+```
+```
 sudo vim info.php
 ```
 ```
 <?php 
       phpinfo();  
 ?>
+
 :wq!(強制存檔離開
 ```
+### 安裝phpmyadmin
 ```
 sudo apt install phpmyadmin
 ```
+建立帳號
 ```
 sudo mysql -u root mysql
 ```
@@ -44,21 +51,30 @@ exit
 ```
 sudo mysql_secure_installation
 ```
+到瀏覽器網址的地方輸入
 ```
-登入phpmyadmin失敗
+自己的ip位置/phpmyadmin
+```
+如果有順利連接會顯示這個畫面然後登入帳密;
+預設帳號:root，密碼是在ubuntu設定的密碼
+
+### 如果登入phpmyadmin失敗
+```
 sudo mysql -p -u root
-CREATE USER '(自己想要的帳號)'@'%' IDENTIFIED BY '(密碼)';
-GRANT ALL PRIVILEGES ON *.* TO '(帳號)'@'%';
+CREATE USER '自己想要的帳號'@'%' IDENTIFIED BY '密碼';
+GRANT ALL PRIVILEGES ON *.* TO '帳號'@'%';
 exit
 ```
+### 建立完資料庫之後回去終端機的指令
 ```
-建立完資料庫之後回去終端機的指令
-sudo nano (資料庫名稱).php
+sudo vim 資料庫名稱.php
+```
+```
 <?php
           $host ='localhost';
           $dbuser ='(主機的帳號)';
           $dbpw ='(自己的密碼)';
-          $dbname ='(資料庫名稱)';
+          $dbname =$_GET['a'];
           $link = mysqli_connect($host,$dbuser,$dbpw,$dbname);
           if(empty($link)){
              print mysqli_error($link);
@@ -73,22 +89,24 @@ sudo nano (資料庫名稱).php
            $result = mysqli_query($link,$sql);
            if($result) {
               $num =mysqli_num_rows($result);
-              echo "(資料庫名稱) 資料表有".$num."筆資料<br>";  }
+              echo $_GET['a'];
+              echo "資料表有".$num."筆資料<br>";  }
            $result =mysqli_query($link,$sql);
            while($row =mysqli_fetch_array($result,MYSQLI_ASSOC)) {
                 printf("第%s筆資料: %s<br>, %s<br>, %s<br>",$row["number"],$row["id"],$row["name"],$row["gender"]);
 }
 ?>
-ctrl+o存檔
-ctrl+x退出
 ```
-
+### 建立新增要輸入資料庫的資料
+```
+sudo vim sounyu.php
+```
 ```
 <?php
           $host ='localhost';
-          $dbuser ='(主機的帳號)';
-          $dbpw ='(自己的密碼)';
-          $dbname ='(資料庫名稱)';
+          $dbuser ='主機的帳號';
+          $dbpw ='自己的密碼';
+          $dbname ='資料庫名稱';
           $link = mysqli_connect($host,$dbuser,$dbpw,$dbname);
           if($link){
              mysqli_query($link, 'SET NAMES uff8');
@@ -99,7 +117,7 @@ ctrl+x退出
           }
           
           //sql語法存在變數中
-          $sql ="INSERT INTO '(資料庫名稱)' ('number','id','name','gender') VALUE ('1' ,'b1042001','姓名','男')";
+          $sql ="INSERT INTO '資料庫名稱' ('number','id','name','gender') VALUE ('1' ,'b1042001','姓名','男')";
           
           //用mysqli_query方法執行(sql語法)將變數存在變數中
           $result =mysqli_query($link,$sql);
@@ -121,6 +139,16 @@ ctrl+x退出
 ?>
 ```
 
+### 如果出現sql語法錯誤畫面
+將sounyu.php中的$sql ="INSERT INTO '資料庫名稱' ('number','id','name','gender') VALUE ('1' ,'b1042001','姓名','男')";改成
+```
+$sql ="INSERT INTO 資料庫名稱(number,id,name,gender) VALUES ('1' ,'b1042001','姓名','男')";
+```
+
+### 建立網頁輸入要搜尋的資料庫
+```
+sudo vim action.php
+```
 ```
 <html>
 <head><title>php連接資料庫MysQl</title></head>
@@ -128,7 +156,7 @@ ctrl+x退出
 輸入要搜尋的資料庫
 <form action='(資料庫名稱).php'>
 <input type='text' name='a' />
-<button type='submit'>送出<button>
+<button type='submit'>送出</button>
 </form>
 </body>
 </html>
