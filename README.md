@@ -1,5 +1,5 @@
 # virtualbox
- b1042092 b1042093
+b1042026 b1042092 b1042093
 ### 更新
 ```
 sudo apt update
