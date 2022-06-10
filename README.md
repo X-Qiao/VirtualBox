@@ -120,3 +120,16 @@ ctrl+x退出
           mysqli_close($link);
 ?>
 ```
+
+```
+<html>
+<head><title>php連接資料庫MysQl</title></head>
+<body>
+輸入要搜尋的資料庫
+<form action='(資料庫名稱).php'>
+<input type='text' name='a' />
+<button type='submit'>送出<button>
+</form>
+</body>
+</html>
+```
