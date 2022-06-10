@@ -9,10 +9,21 @@ sudo apt upgrade
 ```
 sudo apt install apache2 mysql-server php libapache2-mod-php php-mysql
 ```
+
+### 確認ip位置
 ```
 sudo apt install net-tools
 ifconfig
 ```
+或
+```
+hostname -I
+```
+皆可查看自己點腦的ip位置
+
+![專題1](https://user-images.githubusercontent.com/106758228/173145464-8cb1162d-bb15-404c-a630-a0d710eef5c5.png)
+
+
 建立一個檔案
 ```
 cd /var/www/html
@@ -31,14 +42,22 @@ sudo vim info.php
 
 :wq!(強制存檔離開
 ```
+![專題2](https://user-images.githubusercontent.com/106758228/173145625-1e55da61-ba70-46ae-bbff-e49a6d13a084.png)
+
 ### 安裝phpmyadmin
 ```
 sudo apt install phpmyadmin
 ```
+![專題3](https://user-images.githubusercontent.com/106758228/173145934-a34b1aa9-4613-4a3a-80a2-c82035c30642.png)
+
+![專題4](https://user-images.githubusercontent.com/106758228/173146037-d365842d-7772-4a0b-8a19-61ee3b367a2c.png)
+
 建立帳號
 ```
 sudo mysql -u root mysql
 ```
+![專題5](https://user-images.githubusercontent.com/106758228/173146445-42e06141-86dd-48f1-9195-0e38105ac38f.png)
+
 ```
 UPDATE user SET plugin='mysql_native_password' WHERE User='root';
 ```
@@ -48,17 +67,40 @@ FLUSH PRIVILEGES;
 ```
 exit
 ```
+![專題6](https://user-images.githubusercontent.com/106758228/173147123-12207724-7fc4-40c5-afb8-6bd0956b7580.jpg)
+
 ```
 sudo mysql_secure_installation
 ```
-到瀏覽器網址的地方輸入
+![專題7](https://user-images.githubusercontent.com/106758228/173147309-3ff0fa6f-395b-41f2-a4c2-7dffbf324ffe.png)
+
+依序輸入
+```
+y 
+2
+y
+y
+y
+```
+![專題8](https://user-images.githubusercontent.com/106758228/173147807-9831c412-2c5e-476b-aff5-202bb7cd207b.png)
+![專題9](https://user-images.githubusercontent.com/106758228/173148171-7ff93fec-0afe-4606-bdee-4d62471ce63c.png)
+![專題10](https://user-images.githubusercontent.com/106758228/173148371-7492448d-2597-4680-8d89-6c3d15706ea9.png)
+
+設定完成後到瀏覽器網址的地方輸入以下
 ```
 自己的ip位置/phpmyadmin
 ```
-如果有順利連接會顯示這個畫面然後登入帳密;
+![專題11](https://user-images.githubusercontent.com/106758228/173148925-b35bafda-de4d-415c-abf6-7e43f9f2cf8e.png)
+
+如果有順利連接會顯示這個畫面然後登入帳密
+![專題12](https://user-images.githubusercontent.com/106758228/173149099-d51a90c4-a00a-4f1b-914e-97531ef894ed.png)
+
 預設帳號:root，密碼是在ubuntu設定的密碼
 
 ### 如果登入phpmyadmin失敗
+
+![專題13](https://user-images.githubusercontent.com/106758228/173149198-2cadcd7a-ab86-4b72-81b6-12af6a1b48b2.png)
+
 ```
 sudo mysql -p -u root
 CREATE USER '自己想要的帳號'@'%' IDENTIFIED BY '密碼';
