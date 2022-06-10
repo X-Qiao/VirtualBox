@@ -107,6 +107,9 @@ CREATE USER '自己想要的帳號'@'%' IDENTIFIED BY '密碼';
 GRANT ALL PRIVILEGES ON *.* TO '帳號'@'%';
 exit
 ```
+![專題14](https://user-images.githubusercontent.com/106758228/173151771-f18d307e-4091-4e8a-b282-2b79e126ad4a.png)
+![專題15](https://user-images.githubusercontent.com/106758228/173152273-d4ee01ea-6c68-4825-a66e-e665e78614ac.png)
+
 ### 建立完資料庫之後回去終端機的指令
 ```
 sudo vim 資料庫名稱.php
