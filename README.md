@@ -1,5 +1,5 @@
 # virtualbox
-b1042092 b1042093
+ b1042092 b1042093
 ### 更新
 ```
 sudo apt update
@@ -81,4 +81,42 @@ sudo nano (資料庫名稱).php
 ?>
 ctrl+o存檔
 ctrl+x退出
+```
+
+```
+<?php
+          $host ='localhost';
+          $dbuser ='(主機的帳號)';
+          $dbpw ='(自己的密碼)';
+          $dbname ='(資料庫名稱)';
+          $link = mysqli_connect($host,$dbuser,$dbpw,$dbname);
+          if($link){
+             mysqli_query($link, 'SET NAMES uff8');
+             echo("正確連接資料庫");
+          }
+          else{
+             echo "不正確連接資料庫</br>" . mysqli_connect_error();
+          }
+          
+          //sql語法存在變數中
+          $sql ="INSERT INTO '(資料庫名稱)' ('number','id','name','gender') VALUE ('1' ,'b1042001','姓名','男')";
+          
+          //用mysqli_query方法執行(sql語法)將變數存在變數中
+          $result =mysqli_query($link,$sql);
+          
+          //如果有異動到資料庫數量(更新資料庫)
+          if(mysqli_affected_rows($link)>0){
+          //如果有一筆以上代表有更新
+          //mysqli_insert_id可以抓到第一筆的id
+          $new_id =mysqli_insert_id($link);
+            echo "新增後的id為{$new_id}";
+          }
+          elseif(mysqli_affected_rows($link)==0){
+            echo"無資料新增";
+          }
+          else{
+            echo "{$sql}語法執行失敗，錯誤訊息:" . mysqli_error($link);
+          }
+          mysqli_close($link);
+?>
 ```
