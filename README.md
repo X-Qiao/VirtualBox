@@ -1,9 +1,31 @@
-# virtualbox
+# VirtualBox
 b1042026 羅翊宸
 
 b1042092 李心喬
 
 b1042093 藍宇晨
+
+
+* [在VirtualBox使用MySQL建立資料庫](#在virtualbox使用mysql建立資料庫)
+  - [更新](#更新)
+  - [安裝apache2](#安裝apache2)
+  - [確認ip位置](#確認ip位置)
+  - [建檔+寫入php格式](#建檔寫入php格式)
+  - [安裝phpmyadmin+建立帳號](#安裝phpmyadmin建立帳號)
+    - [如果登入phpmyadmin失敗](#如果登入phpmyadmin失敗) 
+     
+  - [建立資料庫](#建立資料庫)
+  - [建立完資料庫之後回去終端機的指令](#建立完資料庫之後回去終端機的指令)
+  - [建立新增要輸入資料庫的資料](#建立新增要輸入資料庫的資料)
+    - [如果出現sql語法錯誤畫面](#如果出現sql語法錯誤畫面)
+* [建立網頁輸入要搜尋的資料庫](#建立網頁輸入要搜尋的資料庫)
+  - [瀏覽器檢視是否有成功](#瀏覽器檢視是否有成功)
+    - [新增資料至資料庫](#新增資料至資料庫)
+    - [搜尋資料庫](#搜尋資料庫)
+* [參考資料](#參考資料)
+
+## 在VirtualBox使用MySQL建立資料庫
+
 ### 更新
 ```
 sudo apt update
@@ -26,7 +48,7 @@ hostname -I
 
 ![專題1](https://user-images.githubusercontent.com/106758228/173145464-8cb1162d-bb15-404c-a630-a0d710eef5c5.png)
 
-
+### 建檔+寫入php格式
 建立一個檔案
 ```
 cd /var/www/html
@@ -49,7 +71,7 @@ sudo vim info.php
 ```
 ![專題2](https://user-images.githubusercontent.com/106758228/173145625-1e55da61-ba70-46ae-bbff-e49a6d13a084.png)
 
-### 安裝phpmyadmin
+### 安裝phpmyadmin+建立帳號
 ```
 sudo apt install phpmyadmin
 ```
@@ -104,7 +126,7 @@ y
 
 預設帳號:root，密碼是在ubuntu設定的密碼
 
-### 如果登入phpmyadmin失敗
+#### 如果登入phpmyadmin失敗
 
 ![專題13](https://user-images.githubusercontent.com/106758228/173149198-2cadcd7a-ab86-4b72-81b6-12af6a1b48b2.png)
 
@@ -233,7 +255,7 @@ sudo vim sounyu.php
 ```
 ![專題error1](https://user-images.githubusercontent.com/106761671/173175820-8782b2aa-79cc-4dfc-bfc3-8e84e421280d.png)
 
-### 如果出現sql語法錯誤畫面
+#### 如果出現sql語法錯誤畫面
 
 ![專題error2](https://user-images.githubusercontent.com/106761671/173174999-aec03401-a660-49dc-a780-f240eb96d9db.png)
 
@@ -245,7 +267,7 @@ $sql ="INSERT INTO 資料表名稱(number,id,name,gender) VALUES ('1' ,'b1042001
 ```
 ![專題23](https://user-images.githubusercontent.com/106761671/173175871-cee38f87-83ab-4920-98d1-86e6515248f0.png)
 
-### 建立網頁輸入要搜尋的資料庫
+## 建立網頁輸入要搜尋的資料庫
 ```
 sudo vim action.php
 ```
@@ -264,7 +286,7 @@ sudo vim action.php
 ![專題23-1](https://user-images.githubusercontent.com/106761671/173175937-6a04c560-2999-413c-b966-4b26f12f4e27.png)
 
 ### 瀏覽器檢視是否有成功
-##### 新增資料至資料庫
+#### 新增資料至資料庫
 到瀏覽器搜尋
 ```
 ip位置/sounyu.php
@@ -279,7 +301,7 @@ ip位置/sounyu.php
 ![專題28](https://user-images.githubusercontent.com/106761671/173175094-7b348c43-672b-4c17-8332-5a7918ef9f63.png)
 
 
-##### 搜尋資料庫
+#### 搜尋資料庫
 到瀏覽器搜尋
 ```
 ip位置/action.php
