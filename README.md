@@ -35,6 +35,7 @@ sudo apt upgrade
 sudo apt install apache2 mysql-server php libapache2-mod-php php-mysql
 ```
 ### 確認ip位置
+將網路設為橋接介面卡
 ```
 sudo apt install net-tools
 ifconfig
