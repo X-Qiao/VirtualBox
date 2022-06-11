@@ -7,7 +7,6 @@ b1042093 藍宇晨
 
 
 * [在VirtualBox使用MySQL建立資料庫](#在virtualbox使用mysql建立資料庫)
-  - [更新](#更新)
   - [安裝apache2](#安裝apache2)
   - [確認ip位置](#確認ip位置)
   - [建檔+寫入php格式](#建檔寫入php格式)
@@ -26,7 +25,7 @@ b1042093 藍宇晨
 
 ## 在VirtualBox使用MySQL建立資料庫
 
-### 更新
+更新
 ```
 sudo apt update
 sudo apt upgrade
