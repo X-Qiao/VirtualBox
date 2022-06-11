@@ -3,15 +3,14 @@
 b1042026 羅翊宸 b1042092 李心喬 b1042093 藍宇晨
 
 * [VirtualBox介紹](#virtualbox介紹)
-* [phpmyadmin介紹](#phpmyadmin介紹)
+* [phpMyAdmin介紹](#phpmyadmin介紹)
 * [MySQL介紹](#mysql介紹)
 * [在VirtualBox使用MySQL建立資料庫](#在virtualbox使用mysql建立資料庫)
   - [安裝apache2](#安裝apache2)
   - [確認ip位置](#確認ip位置)
   - [建檔+寫入php格式](#建檔寫入php格式)
-  - [安裝phpmyadmin+建立帳號](#安裝phpmyadmin建立帳號)
-    - [如果登入phpmyadmin失敗](#如果登入phpmyadmin失敗) 
-     
+  - [安裝phpMyAdmin+建立帳號](#安裝phpmyadmin建立帳號)
+    - [如果登入phpMyAdmin失敗](#如果登入phpmyadmin失敗)
   - [建立資料庫](#建立資料庫)
   - [建立完資料庫之後回去終端機的指令](#建立完資料庫之後回去終端機的指令)
   - [建立新增要輸入資料庫的資料](#建立新增要輸入資料庫的資料)
@@ -23,8 +22,8 @@ b1042026 羅翊宸 b1042092 李心喬 b1042093 藍宇晨
 * [參考資料](#參考資料)
 ## VirtualBox介紹
 Oracle VirtualBox是一款虛擬機器軟體，提供使用者在32位元或64位元的Windows、Solaris及Linux 作業系統上虛擬其它x86的作業系統。能夠安裝多個客戶端作業系統，且每個客戶端系統皆可獨立開啟、暫停與停止，支援多個作業系統同時運行的環境，也彼此能夠同時使用網路。
-## phpmyadmin介紹
-phpMyAdmin 是一個以PHP為基礎，以Web-Base方式架構在網站主機上的MySQL的資料庫管理工具，讓管理者可用Web介面管理MySQL資料庫。phpMyAdmin跟其他PHP程式一樣在網頁伺服器上執行，可以在任何地方使用這些程式產生的HTML頁面，方便的建立、修改、刪除資料庫及資料表。可藉由phpMyAdmin建立常用的php語法，方便編寫網頁時所需要的sql語法正確性。
+## phpMyAdmin介紹
+phpMyAdmin是一個以PHP為基礎，以Web-Base方式架構在網站主機上的MySQL的資料庫管理工具，讓管理者可用Web介面管理MySQL資料庫。phpMyAdmin跟其他PHP程式一樣在網頁伺服器上執行，可以在任何地方使用這些程式產生的HTML頁面，方便的建立、修改、刪除資料庫及資料表。可藉由phpMyAdmin建立常用的php語法，方便編寫網頁時所需要的sql語法正確性。
 ## MySQL介紹
 MySQL 是目前主流的關聯式資料庫其中之一。
 ## 在VirtualBox使用MySQL建立資料庫
@@ -75,9 +74,9 @@ sudo vim info.php
 ```
 ![專題2](https://user-images.githubusercontent.com/106758228/173145625-1e55da61-ba70-46ae-bbff-e49a6d13a084.png)
 
-### 安裝phpmyadmin+建立帳號
+### 安裝phpMyAdmin+建立帳號
 ```
-sudo apt install phpmyadmin
+sudo apt install phpMyAdmin
 ```
 ![專題3](https://user-images.githubusercontent.com/106758228/173145934-a34b1aa9-4613-4a3a-80a2-c82035c30642.png)
 
@@ -130,7 +129,7 @@ y
 
 預設帳號:root，密碼是在ubuntu設定的密碼
 
-#### 如果登入phpmyadmin失敗
+#### 如果登入phpMyAdmin失敗
 
 ![專題13](https://user-images.githubusercontent.com/106758228/173149198-2cadcd7a-ab86-4b72-81b6-12af6a1b48b2.png)
 
@@ -325,3 +324,7 @@ https://zh.m.wikipedia.org/zh-tw/VirtualBox
 https://ithelp.ithome.com.tw/m/articles/10264903
 
 https://zh.m.wikipedia.org/zh-tw/PhpMyAdmin
+
+https://www.gocar.idv.tw/archives/151
+
+https://ui-code.com/archives/214
