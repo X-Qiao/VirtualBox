@@ -8,7 +8,7 @@ b1042026 羅翊宸 b1042092 李心喬 b1042093 藍宇晨
 * [在VirtualBox使用MySQL建立資料庫](#在virtualbox使用mysql建立資料庫)
   - [安裝apache2](#安裝apache2)
   - [確認ip位置](#確認ip位置)
-  - [建檔+寫入php格式](#建檔寫入php格式)
+  - [測試apache是否能解析php](#測試apache是否能解析php)
   - [安裝phpMyAdmin+建立帳號](#安裝phpmyadmin建立帳號)
     - [如果登入phpMyAdmin失敗](#如果登入phpmyadmin失敗)
   - [建立資料庫](#建立資料庫)
@@ -51,8 +51,10 @@ hostname -I
 
 ![專題1](https://user-images.githubusercontent.com/106758228/173145464-8cb1162d-bb15-404c-a630-a0d710eef5c5.png)
 
-### 建檔+寫入php格式
-建立一個檔案
+### 測試apache是否能解析php
+php網絡服務器根目錄默認設置在/var/www
+
+新建及編輯.php文件
 ```
 cd /var/www/html
 ls
