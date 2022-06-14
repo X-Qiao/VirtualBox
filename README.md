@@ -330,3 +330,5 @@ https://zh.m.wikipedia.org/zh-tw/PhpMyAdmin
 https://www.gocar.idv.tw/archives/151
 
 https://ui-code.com/archives/214
+
+MySQL+PHP初心者的學習殿堂：資料庫×動態網頁設計實務養成
