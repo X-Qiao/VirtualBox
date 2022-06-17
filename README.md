@@ -1,8 +1,7 @@
-# VirtualBox
+# 用phpMyAdmin+MySQL製作互動式網頁
 ### 組員
 b1042026 羅翊宸 b1042092 李心喬 b1042093 藍宇晨
 
-* [VirtualBox介紹](#virtualbox介紹)
 * [phpMyAdmin介紹](#phpmyadmin介紹)
 * [MySQL介紹](#mysql介紹)
 * [在VirtualBox使用MySQL建立資料庫](#在virtualbox使用mysql建立資料庫)
@@ -20,8 +19,7 @@ b1042026 羅翊宸 b1042092 李心喬 b1042093 藍宇晨
     - [新增資料至資料庫](#新增資料至資料庫)
     - [搜尋資料庫](#搜尋資料庫)
 * [參考資料](#參考資料)
-## VirtualBox介紹
-Oracle VirtualBox是一款虛擬機器軟體，提供使用者在32位元或64位元的Windows、Solaris及Linux 作業系統上虛擬其它x86的作業系統。能夠安裝多個客戶端作業系統，且每個客戶端系統皆可獨立開啟、暫停與停止，支援多個作業系統同時運行的環境，也彼此能夠同時使用網路。
+
 ## phpMyAdmin介紹
 phpMyAdmin是一個以PHP為基礎，以Web-Base方式架構在網站主機上的MySQL的資料庫管理工具，讓管理者可用Web介面管理MySQL資料庫。phpMyAdmin跟其他PHP程式一樣在網頁伺服器上執行，可以在任何地方使用這些程式產生的HTML頁面，方便的建立、修改、刪除資料庫及資料表。可藉由phpMyAdmin建立常用的php語法，方便編寫網頁時所需要的sql語法正確性。
 ## MySQL介紹
