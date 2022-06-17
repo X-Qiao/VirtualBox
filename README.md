@@ -78,7 +78,10 @@ sudo vim info.php
 
 ### 安裝phpMyAdmin+建立帳號
 ```
-sudo apt install phpMyAdmin
+sudo apt install phpmyadmin
+```
+```
+按空白使前面出現星號 TAB鍵確定
 ```
 ![專題3](https://user-images.githubusercontent.com/106758228/173145934-a34b1aa9-4613-4a3a-80a2-c82035c30642.png)
 
@@ -110,6 +113,7 @@ sudo mysql_secure_installation
 ```
 y 
 2
+密碼
 y
 y
 y
@@ -129,7 +133,7 @@ y
 
 ![專題12](https://user-images.githubusercontent.com/106758228/173149099-d51a90c4-a00a-4f1b-914e-97531ef894ed.png)
 
-預設帳號:root，密碼是在ubuntu設定的密碼
+預設帳號:root，密碼是ubuntu的密碼
 
 #### 如果登入phpMyAdmin失敗
 
